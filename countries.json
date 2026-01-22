@@ -1,0 +1,369 @@
+[
+  {
+    "id": "albania",
+    "title": "ALBANIA",
+    "subtitle": "Ksamil & Saranda",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "#1 TOP PICK",
+      "bgColor": "bg-white",
+      "textColor": "text-blue-600"
+    },
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"The Maldives of Europe for a fraction of the price.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£450 - £550",
+      "flights": "£180 - £250",
+      "stayFun": "~£260"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Instagram-perfect turquoise water",
+      "VIP beach clubs for cheap prices"
+    ],
+    "activities": [
+      "Speedboat to Twin Islands",
+      "The Blue Eye Spring Tour",
+      "Gjirokastër City Day Trip"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/albania-l169053/",
+    "visaCheck": "None",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-blue-600",
+    "buttonHoverColor": "hover:bg-blue-700"
+  },
+  {
+    "id": "montenegro",
+    "title": "MONTENEGRO",
+    "subtitle": "Budva & Kotor",
+    "titleSize": "text-4xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Miami vibes meeting Medieval history.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£550 - £650",
+      "flights": "£200 - £300",
+      "stayFun": "~£300"
+    },
+    "budgetColor": "gray",
+    "voteYesItems": [
+      "Open-air superclubs (Top Hill)",
+      "Medieval walled cities"
+    ],
+    "activities": [
+      "Blue Cave Speedboat Tour",
+      "Kotor Old Town Walk",
+      "White Water Rafting (Tara)"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/montenegro-l169142/",
+    "visaCheck": "None (30 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-gray-800",
+    "buttonHoverColor": "hover:bg-gray-700"
+  },
+  {
+    "id": "belfast",
+    "title": "BELFAST",
+    "subtitle": "Northern Ireland",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "💰 CHEAPEST",
+      "bgColor": "bg-white",
+      "textColor": "text-emerald-700"
+    },
+    "visaStatus": {
+      "text": "DOMESTIC 🇬🇧",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Pub culture, history, and Game of Thrones.\"",
+    "bestSun": "June - August",
+    "budget": {
+      "total": "£400 - £450",
+      "flights": "£50 - £80",
+      "stayFun": "~£350"
+    },
+    "budgetColor": "emerald",
+    "voteYesItems": [
+      "Live music in traditional pubs",
+      "Zero airport stress"
+    ],
+    "activities": [
+      "Titanic Belfast Experience",
+      "Political Black Cab Tour",
+      "Game of Thrones Studio"
+    ],
+    "activityColor": "emerald",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/belfast-l442/",
+    "visaCheck": "None (UK)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-emerald-700",
+    "buttonHoverColor": "hover:bg-emerald-800"
+  },
+  {
+    "id": "georgia",
+    "title": "GEORGIA",
+    "subtitle": "Tbilisi",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Wine, techno, and mountains.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£500 - £600",
+      "flights": "£260 - £350",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "pink",
+    "voteYesItems": [
+      "World-famous food & wine",
+      "Cool underground club scene"
+    ],
+    "activities": [
+      "Kazbegi Mountain Day Trip",
+      "Sulphur Baths Experience",
+      "Khinkali Cooking Class"
+    ],
+    "activityColor": "pink",
+    "activitiesLink": "https://www.getyourguide.com/tbilisi-l321/",
+    "visaCheck": "None (90 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-pink-700",
+    "buttonHoverColor": "hover:bg-pink-800"
+  },
+  {
+    "id": "gibraltar",
+    "title": "GIBRALTAR",
+    "subtitle": "British Territory",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "VISA FREE* ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"British pubs, sun, and wild monkeys on the Rock.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£600 - £700",
+      "flights": "£150 - £250",
+      "stayFun": "~£400"
+    },
+    "budgetColor": "red",
+    "voteYesItems": [
+      "See the only wild monkeys in Europe",
+      "Fish & Chips in 30°C weather"
+    ],
+    "activities": [
+      "Dolphin Watching Cruise",
+      "Cable Car & The Rock",
+      "St. Michael's Cave Tour"
+    ],
+    "activityColor": "red",
+    "activitiesLink": "https://www.getyourguide.com/gibraltar-l1100/",
+    "visaCheck": "Free (w/ Multi-UK Visa)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-red-700",
+    "buttonHoverColor": "hover:bg-red-800"
+  },
+  {
+    "id": "crete",
+    "title": "CRETE",
+    "subtitle": "Greece",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "⚠️ VISA REQ",
+      "bgColor": "bg-red-600",
+      "textColor": "text-white"
+    },
+    "visaStatus": {
+      "text": "HARD VISA 🛂",
+      "bgColor": "bg-red-100",
+      "textColor": "text-red-500"
+    },
+    "description": "\"The classic Greek Island summer.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£700+",
+      "flights": "£200 - £280",
+      "visaCost": "£100"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Pink sand beaches (Elafonisi)",
+      "Authentic Greek food"
+    ],
+    "activities": [
+      "Elafonisi Pink Sand Beach",
+      "Balos Lagoon Boat Cruise",
+      "Quad Safari in Mountains"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/crete-l404/",
+    "visaCheck": "SCHENGEN REQ",
+    "visaCheckColor": "red",
+    "buttonColor": "bg-blue-500",
+    "buttonHoverColor": "hover:bg-blue-600",
+    "borderClass": "border-2 border-red-100"
+  },
+  {
+    "id": "macedonia",
+    "title": "OHRID",
+    "subtitle": "North Macedonia",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Lakeside chill, boat parties & nature.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£350 - £450",
+      "flights": "£100 - £180",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "yellow",
+    "voteYesItems": [
+      "Relaxing by a huge clear lake",
+      "Very cheap food and drinks"
+    ],
+    "activities": [
+      "Old Town Boat Cruise",
+      "Paragliding over Lake Ohrid",
+      "Saint Naum Monastery Trip"
+    ],
+    "activityColor": "yellow",
+    "activitiesLink": "https://www.getyourguide.com/ohrid-l1421/",
+    "visaCheck": "None (15 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-yellow-600",
+    "buttonHoverColor": "hover:bg-yellow-700"
+  },
+  {
+    "id": "egypt",
+    "title": "EGYPT",
+    "subtitle": "Sharm El Sheikh",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "E-VISA ⚡",
+      "bgColor": "bg-yellow-100",
+      "textColor": "text-yellow-600"
+    },
+    "description": "\"All-inclusive resort life & snorkeling.\"",
+    "bestSun": "March - November",
+    "budget": {
+      "total": "£500 - £600",
+      "flights": "£150 - £250",
+      "allIncl": "~£300"
+    },
+    "budgetColor": "orange",
+    "voteYesItems": [
+      "Doing nothing by the pool",
+      "World-class scuba/snorkeling"
+    ],
+    "activities": [
+      "Ras Mohammed Snorkeling",
+      "Sunrise Desert Quad Biking",
+      "Luxury Boat Cruise w/ Lunch"
+    ],
+    "activityColor": "orange",
+    "activitiesLink": "https://www.getyourguide.com/sharm-el-sheikh-l458/",
+    "visaCheck": "E-Visa / VOA",
+    "visaCheckColor": "yellow",
+    "buttonColor": "bg-yellow-600",
+    "buttonHoverColor": "hover:bg-yellow-700"
+  },
+  {
+    "id": "serbia",
+    "title": "SERBIA",
+    "subtitle": "Belgrade",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"The party capital of the Balkans.\"",
+    "bestSun": "May - September",
+    "budget": {
+      "total": "£450 - £550",
+      "flights": "£150 - £200",
+      "stayFun": "~£250"
+    },
+    "budgetColor": "red",
+    "voteYesItems": [
+      "Floating river clubs (Splavovi)",
+      "Cheap drinks & gritty energy"
+    ],
+    "activities": [
+      "Sunset Sightseeing Cruise",
+      "Underground Secrets Tour",
+      "Bohemian Quarter Food Tour"
+    ],
+    "activityColor": "red",
+    "activitiesLink": "https://www.getyourguide.com/belgrade-l169062/",
+    "visaCheck": "Check Rules",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-red-700",
+    "buttonHoverColor": "hover:bg-red-800"
+  },
+  {
+    "id": "bosnia",
+    "title": "BOSNIA",
+    "subtitle": "Sarajevo",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"History, culture & stunning waterfalls.\"",
+    "bestSun": "May - September",
+    "budget": {
+      "total": "£400 - £500",
+      "flights": "£150 - £200",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Swimming at Kravice Waterfalls",
+      "Unique East-meets-West city"
+    ],
+    "activities": [
+      "Grand Walking Tour",
+      "Mostar & Kravice Waterfalls",
+      "War Tunnel Museum Tour"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/sarajevo-l169070/",
+    "visaCheck": "None (30 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-blue-800",
+    "buttonHoverColor": "hover:bg-blue-900"
+  }
+]
+

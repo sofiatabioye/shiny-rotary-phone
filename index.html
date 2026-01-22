@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Trip Travel Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .card-font-title {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .clip-path-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Custom Gradients for Destinations - Using !important to override Tailwind */
+        div.bg-albania,
+        .bg-albania { background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%) !important; background-color: transparent !important; }
+        div.bg-montenegro,
+        .bg-montenegro { background: linear-gradient(135deg, #13547a 0%, #80d0c7 100%) !important; background-color: transparent !important; }
+        div.bg-belfast,
+        .bg-belfast { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important; background-color: transparent !important; }
+        div.bg-georgia,
+        .bg-georgia { background: linear-gradient(135deg, #662D8C 0%, #ED1E79 100%) !important; background-color: transparent !important; }
+        div.bg-gibraltar,
+        .bg-gibraltar { background: linear-gradient(135deg, #cf142b 0%, #00247d 100%) !important; background-color: transparent !important; }
+        div.bg-crete,
+        .bg-crete { background: linear-gradient(135deg, #2980B9 0%, #6DD5FA 100%) !important; background-color: transparent !important; }
+        div.bg-macedonia,
+        .bg-macedonia { background: linear-gradient(135deg, #F2994A 0%, #F2C94C 100%) !important; background-color: transparent !important; }
+        div.bg-egypt,
+        .bg-egypt { background: linear-gradient(135deg, #d4a017 0%, #f6d365 100%) !important; background-color: transparent !important; }
+        div.bg-serbia,
+        .bg-serbia { background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%) !important; background-color: transparent !important; }
+        div.bg-bosnia,
+        .bg-bosnia { background: linear-gradient(135deg, #1A2980 0%, #26D0CE 100%) !important; background-color: transparent !important; }
+        
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 flex flex-col items-center min-h-screen">
+
+    <div class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">✈️ Top 10 Trip Options</h1>
+        <p class="text-gray-600">Ranked by Fun, Budget & Visa Ease (5 Days)</p>
+    </div>
+
+    <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full">
+        <!-- Cards will be dynamically generated here -->
+    </div>
+
+    <script>
+       const countries= [
+  {
+    "id": "albania",
+    "title": "ALBANIA",
+    "subtitle": "Ksamil & Saranda",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "#1 TOP PICK",
+      "bgColor": "bg-white",
+      "textColor": "text-blue-600"
+    },
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"The Maldives of Europe for a fraction of the price.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£450 - £550",
+      "flights": "£180 - £250",
+      "stayFun": "~£260"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Instagram-perfect turquoise water",
+      "VIP beach clubs for cheap prices"
+    ],
+    "activities": [
+      "Speedboat to Twin Islands",
+      "The Blue Eye Spring Tour",
+      "Gjirokastër City Day Trip"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/albania-l169053/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=1754&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "None",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-blue-600",
+    "buttonHoverColor": "hover:bg-blue-700"
+  },
+  {
+    "id": "montenegro",
+    "title": "MONTENEGRO",
+    "subtitle": "Budva & Kotor",
+    "titleSize": "text-4xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Miami vibes meeting Medieval history.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£550 - £650",
+      "flights": "£200 - £300",
+      "stayFun": "~£300"
+    },
+    "budgetColor": "gray",
+    "voteYesItems": [
+      "Open-air superclubs (Top Hill)",
+      "Medieval walled cities"
+    ],
+    "activities": [
+      "Blue Cave Speedboat Tour",
+      "Kotor Old Town Walk",
+      "White Water Rafting (Tara)"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/montenegro-l169142/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=1186&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "None (30 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-gray-800",
+    "buttonHoverColor": "hover:bg-gray-700"
+  },
+  {
+    "id": "belfast",
+    "title": "BELFAST",
+    "subtitle": "Northern Ireland",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "💰 CHEAPEST",
+      "bgColor": "bg-white",
+      "textColor": "text-emerald-700"
+    },
+    "visaStatus": {
+      "text": "DOMESTIC 🇬🇧",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Pub culture, history, and Game of Thrones.\"",
+    "bestSun": "June - August",
+    "budget": {
+      "total": "£400 - £450",
+      "flights": "£50 - £80",
+      "stayFun": "~£350"
+    },
+    "budgetColor": "emerald",
+    "voteYesItems": [
+      "Live music in traditional pubs",
+      "Zero airport stress"
+    ],
+    "activities": [
+      "Titanic Belfast Experience",
+      "Political Black Cab Tour",
+      "Game of Thrones Studio"
+    ],
+    "activityColor": "emerald",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/belfast-l442/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=3008&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "None (UK)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-emerald-700",
+    "buttonHoverColor": "hover:bg-emerald-800"
+  },
+  {
+    "id": "georgia",
+    "title": "GEORGIA",
+    "subtitle": "Tbilisi",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Wine, techno, and mountains.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£500 - £600",
+      "flights": "£260 - £350",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "pink",
+    "voteYesItems": [
+      "World-famous food & wine",
+      "Cool underground club scene"
+    ],
+    "activities": [
+      "Kazbegi Mountain Day Trip",
+      "Sulphur Baths Experience",
+      "Khinkali Cooking Class"
+    ],
+    "activityColor": "pink",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/georgia-l169103/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=6514&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "None (90 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-pink-700",
+    "buttonHoverColor": "hover:bg-pink-800"
+  },
+  {
+    "id": "gibraltar",
+    "title": "GIBRALTAR",
+    "subtitle": "British Territory",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "VISA FREE* ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"British pubs, sun, and wild monkeys on the Rock.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£600 - £700",
+      "flights": "£150 - £250",
+      "stayFun": "~£400"
+    },
+    "budgetColor": "red",
+    "voteYesItems": [
+      "See the only wild monkeys in Europe",
+      "Fish & Chips in 30°C weather"
+    ],
+    "activities": [
+      "Dolphin Watching Cruise",
+      "Cable Car & The Rock",
+      "St. Michael's Cave Tour"
+    ],
+    "activityColor": "red",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/gibraltar-l166/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=6206&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "Free (w/ Multi-UK Visa)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-red-700",
+    "buttonHoverColor": "hover:bg-red-800"
+  },
+  {
+    "id": "crete",
+    "title": "CRETE",
+    "subtitle": "Greece",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "badge": {
+      "text": "⚠️ VISA REQ",
+      "bgColor": "bg-red-600",
+      "textColor": "text-white"
+    },
+    "visaStatus": {
+      "text": "HARD VISA 🛂",
+      "bgColor": "bg-red-100",
+      "textColor": "text-red-500"
+    },
+    "description": "\"The classic Greek Island summer. All inclusive resorts available.\"",
+    "bestSun": "May - October",
+    "budget": {
+      "total": "£500 - £600",
+      "flights": "£150 - £250",
+      "visaCost": "£100"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Pink sand beaches (Elafonisi)",
+      "Authentic Greek food",
+    ],
+    "activities": [
+      "Elafonisi Pink Sand Beach",
+      "Balos Lagoon Boat Cruise",
+      "Quad Safari in Mountains"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/crete-l404/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=619&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "SCHENGEN REQ",
+    "visaCheckColor": "red",
+    "buttonColor": "bg-blue-500",
+    "buttonHoverColor": "hover:bg-blue-600",
+    "borderClass": "border-2 border-red-100"
+  },
+  {
+    "id": "macedonia",
+    "title": "OHRID",
+    "subtitle": "North Macedonia",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"Lakeside chill, boat parties & nature.\"",
+    "bestSun": "June - September",
+    "budget": {
+      "total": "£350 - £450",
+      "flights": "£100 - £180",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "yellow",
+    "voteYesItems": [
+      "Relaxing by a huge clear lake",
+      "Very cheap food and drinks"
+    ],
+    "activities": [
+      "Old Town Boat Cruise",
+      "Paragliding over Lake Ohrid",
+      "Saint Naum Monastery Trip"
+    ],
+    "activityColor": "yellow",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/ohrid-l2416/",
+    "tripPackagesLink": "https://www.loveholidays.com/hotels/?destinationIds=1874&nights=5&rooms=2&sort=POPULAR",
+    "visaCheck": "None (15 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-yellow-600",
+    "buttonHoverColor": "hover:bg-yellow-700"
+  },
+  {
+    "id": "egypt",
+    "title": "EGYPT",
+    "subtitle": "Sharm El Sheikh",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-10",
+    "visaStatus": {
+      "text": "E-VISA ⚡",
+      "bgColor": "bg-yellow-100",
+      "textColor": "text-yellow-600"
+    },
+    "description": "\"All-inclusive resort life & snorkeling.\"",
+    "bestSun": "March - November",
+    "budget": {
+      "total": "£500 - £600",
+      "flights": "£150 - £250",
+      "allIncl": "~£300"
+    },
+    "budgetColor": "orange",
+    "voteYesItems": [
+      "Doing nothing by the pool",
+      "World-class scuba/snorkeling"
+    ],
+    "activities": [
+      "Ras Mohammed Snorkeling",
+      "Sunrise Desert Quad Biking",
+      "Luxury Boat Cruise w/ Lunch"
+    ],
+    "activityColor": "orange",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/sharm-el-sheikh-l408/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=219&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "E-Visa / VOA",
+    "visaCheckColor": "yellow",
+    "buttonColor": "bg-yellow-600",
+    "buttonHoverColor": "hover:bg-yellow-700"
+  },
+  {
+    "id": "serbia",
+    "title": "SERBIA",
+    "subtitle": "Belgrade",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"The party capital of the Balkans.\"",
+    "bestSun": "May - September",
+    "budget": {
+      "total": "£450 - £550",
+      "flights": "£150 - £200",
+      "stayFun": "~£250"
+    },
+    "budgetColor": "red",
+    "voteYesItems": [
+      "Floating river clubs (Splavovi)",
+      "Cheap drinks & gritty energy"
+    ],
+    "activities": [
+      "Sunset Sightseeing Cruise",
+      "Underground Secrets Tour",
+      "Bohemian Quarter Food Tour"
+    ],
+    "activityColor": "red",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/serbia-l169172/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=1888&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "Check Rules",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-red-700",
+    "buttonHoverColor": "hover:bg-red-800"
+  },
+  {
+    "id": "bosnia",
+    "title": "BOSNIA",
+    "subtitle": "Sarajevo",
+    "titleSize": "text-5xl",
+    "overlayOpacity": "opacity-20",
+    "visaStatus": {
+      "text": "VISA FREE ✅",
+      "bgColor": "bg-green-100",
+      "textColor": "text-green-500"
+    },
+    "description": "\"History, culture & stunning waterfalls.\"",
+    "bestSun": "May - September",
+    "budget": {
+      "total": "£400 - £500",
+      "flights": "£150 - £200",
+      "stayFun": "~£200"
+    },
+    "budgetColor": "blue",
+    "voteYesItems": [
+      "Swimming at Kravice Waterfalls",
+      "Unique East-meets-West city"
+    ],
+    "activities": [
+      "Grand Walking Tour",
+      "Mostar & Kravice Waterfalls",
+      "War Tunnel Museum Tour"
+    ],
+    "activityColor": "blue",
+    "activitiesLink": "https://www.getyourguide.com/en-gb/bosnia-and-herzegovina-l169073/",
+    "tripPackagesLink": "https://www.loveholidays.com/holidays/?destinationIds=1891&departureAirports=LON&nights=5&rooms=2&flexibility=0&sort=POPULAR",
+    "visaCheck": "None (30 Days)",
+    "visaCheckColor": "green",
+    "buttonColor": "bg-blue-800",
+    "buttonHoverColor": "hover:bg-blue-900"
+  }
+]
+        // Country background class mapping
+        const countryBgClasses = {
+            albania: "bg-albania",
+            montenegro: "bg-montenegro",
+            belfast: "bg-belfast",
+            georgia: "bg-georgia",
+            gibraltar: "bg-gibraltar",
+            crete: "bg-crete",
+            macedonia: "bg-macedonia",
+            egypt: "bg-egypt",
+            serbia: "bg-serbia",
+            bosnia: "bg-bosnia"
+        };
+
+        // Color mapping for dynamic class generation
+        const colorClasses = {
+            blue: {
+                bg: "bg-blue-50",
+                text: "text-blue-900",
+                border: "border-blue-200",
+                linkBg: "bg-blue-50",
+                linkHover: "hover:bg-blue-100",
+                linkText: "text-blue-600",
+                activityIcon: "text-blue-500"
+            },
+            gray: {
+                bg: "bg-gray-100",
+                text: "text-gray-800",
+                border: "border-gray-300",
+                linkBg: "bg-gray-100",
+                linkHover: "hover:bg-gray-200",
+                linkText: "text-gray-700",
+                activityIcon: "text-blue-500"
+            },
+            emerald: {
+                bg: "bg-emerald-50",
+                text: "text-emerald-900",
+                border: "border-emerald-200",
+                linkBg: "bg-emerald-50",
+                linkHover: "hover:bg-emerald-100",
+                linkText: "text-emerald-700",
+                activityIcon: "text-emerald-500"
+            },
+            pink: {
+                bg: "bg-pink-50",
+                text: "text-pink-900",
+                border: "border-pink-200",
+                linkBg: "bg-pink-50",
+                linkHover: "hover:bg-pink-100",
+                linkText: "text-pink-700",
+                activityIcon: "text-pink-500"
+            },
+            red: {
+                bg: "bg-red-50",
+                text: "text-red-900",
+                border: "border-red-200",
+                linkBg: "bg-red-50",
+                linkHover: "hover:bg-red-100",
+                linkText: "text-red-700",
+                activityIcon: "text-red-500"
+            },
+            yellow: {
+                bg: "bg-yellow-50",
+                text: "text-yellow-900",
+                border: "border-yellow-200",
+                linkBg: "bg-yellow-50",
+                linkHover: "hover:bg-yellow-100",
+                linkText: "text-yellow-700",
+                activityIcon: "text-yellow-500"
+            },
+            orange: {
+                bg: "bg-orange-50",
+                text: "text-orange-900",
+                border: "border-orange-200",
+                linkBg: "bg-orange-50",
+                linkHover: "hover:bg-orange-100",
+                linkText: "text-orange-700",
+                activityIcon: "text-orange-500"
+            }
+        };
+
+        function createCard(country) {
+            const colors = colorClasses[country.budgetColor];
+            const activityColors = colorClasses[country.activityColor];
+            const visaCheckColorClass = country.visaCheckColor === "green" ? "text-green-600" : 
+                                       country.visaCheckColor === "red" ? "text-red-600" : 
+                                       country.visaCheckColor === "yellow" ? "text-yellow-600" : "text-green-600";
+            
+            // Determine budget breakdown
+            let budgetBreakdown = '';
+            if (country.budget.visaCost) {
+                budgetBreakdown = `
+                    <div class="flex justify-between text-gray-600 mb-1"><span>✈️ Flights</span><span>${country.budget.flights}</span></div>
+                    <div class="flex justify-between text-gray-600"><span>🛂 Visa Cost</span><span>${country.budget.visaCost}</span></div>
+                `;
+            } else if (country.budget.allIncl) {
+                budgetBreakdown = `
+                    <div class="flex justify-between text-gray-600 mb-1"><span>✈️ Flights</span><span>${country.budget.flights}</span></div>
+                    <div class="flex justify-between text-gray-600"><span>🏨 All-Incl.</span><span>${country.budget.allIncl}</span></div>
+                `;
+            } else {
+                budgetBreakdown = `
+                    <div class="flex justify-between text-gray-600 mb-1"><span>✈️ Flights</span><span>${country.budget.flights}</span></div>
+                    <div class="flex justify-between text-gray-600"><span>🏠 Stay/Fun</span><span>${country.budget.stayFun}</span></div>
+                `;
+            }
+
+            // Badge HTML
+            const badgeHtml = country.badge ? `
+                <div class="absolute top-4 right-4 ${country.badge.bgColor} ${country.badge.textColor} text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                    ${country.badge.text}
+                </div>
+            ` : '';
+
+            // Border class
+            const borderClass = country.borderClass || '';
+
+            return `
+                <div class="bg-white rounded-3xl overflow-hidden card-shadow transform transition hover:scale-105 duration-300 relative group flex flex-col h-full ${borderClass}">
+                    <div class="h-48 ${countryBgClasses[country.id]} bg-pattern relative clip-path-slant flex items-center justify-center flex-shrink-0">
+                        <div class="absolute inset-0 bg-black ${country.overlayOpacity}"></div>
+                        <div class="text-center z-10 text-white p-4">
+                            <h2 class="${country.titleSize} font-bold card-font-title tracking-wider uppercase drop-shadow-lg">${country.title}</h2>
+                            <p class="text-sm font-semibold tracking-widest uppercase mt-1">${country.subtitle}</p>
+                </div>
+                        ${badgeHtml}
+            </div>
+            
+            <div class="p-6 pt-2 flex-grow flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                     <span class="text-xs font-bold text-gray-400 uppercase tracking-wide">The Vibe</span>
+                             <span class="text-xs font-bold ${country.visaStatus.textColor} ${country.visaStatus.bgColor} px-2 py-1 rounded">${country.visaStatus.text}</span>
+                </div>
+                        <p class="text-gray-700 font-medium mb-2 italic">${country.description}</p>
+                
+                <div class="flex items-center gap-2 mb-4 text-sm font-semibold text-gray-500">
+                            <i class="fas fa-sun text-orange-400"></i> Best Sun: ${country.bestSun}
+                </div>
+
+                        <div class="${colors.bg} rounded-lg p-3 mb-4 text-sm">
+                            <div class="flex justify-between font-bold ${colors.text} border-b ${colors.border} pb-2 mb-2">
+                        <span>EST. TOTAL</span>
+                                <span>${country.budget.total}</span>
+                    </div>
+                            ${budgetBreakdown}
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="text-xs font-bold text-gray-800 uppercase mb-2">👍 VOTE YES IF YOU WANT:</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-3">
+                                ${country.voteYesItems.map(item => `
+                                    <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> ${item}</li>
+                                `).join('')}
+                    </ul>
+
+                    <h3 class="text-xs font-bold text-gray-800 uppercase mb-2 mt-4">🎢 TOP 3 ACTIVITIES:</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 mb-3">
+                                ${country.activities.map(activity => `
+                                    <li class="flex items-start"><i class="fas fa-ticket-alt ${activityColors.activityIcon} mt-1 mr-2"></i> ${activity}</li>
+                                `).join('')}
+                    </ul>
+
+                            <a href="${country.activitiesLink}" target="_blank" class="block w-full text-center ${colors.linkBg} ${colors.linkHover} ${colors.linkText} text-xs font-bold py-2 rounded border ${colors.border} transition mb-2">
+                        🔗 Check Activities
+                    </a>
+                    <a href="${country.tripPackagesLink}" target="_blank" class="block w-full text-center bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold py-2 rounded border border-purple-200 transition">
+                        ✈️ Check Package Holidays
+                    </a>
+                </div>
+                
+                 <div class="mt-auto pt-4 border-t border-dashed border-gray-200">
+                     <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-xs text-gray-400 uppercase">Visa Check</p>
+                                    <p class="text-sm font-bold ${visaCheckColorClass}">${country.visaCheck}</p>
+                        </div>
+                               
+                </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        // <button class="${country.buttonColor} text-white text-xs font-bold px-4 py-2 rounded-lg ${country.buttonHoverColor} transition">VOTE</button>
+        // Render countries (data is already embedded above)
+        const container = document.getElementById('cards-container');
+        container.innerHTML = countries.map(country => createCard(country)).join('');
+    </script>
+    
+    <div class="mt-12 text-center text-gray-500 text-xs">
+        <p>Planning for 8 people • 5 Day Trip • Mixed Passports (UK/NG)</p>
+    </div>
+
+</body>
+</html>
